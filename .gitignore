@@ -1,8 +1,10 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
-#
-GamelandMetaverse/[Ll]ibrary/
+
+
+/GamelandMetaverse/[Ll]ibrary/
+/GamelandMetaverse/Library/
 [Tt]emp/
 [Oo]bj/
 GamelandMetaverse/[Bb]uild/

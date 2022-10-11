@@ -2,11 +2,11 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-GamelandMetaverse[Ll]ibrary/
+GamelandMetaverse/[Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
-GamelandMetaverse[Bb]uild/
-GamelandMetaverse[Bb]uilds/
+GamelandMetaverse/[Bb]uild/
+GamelandMetaverse/[Bb]uilds/
 /Build/
 [Ll]ogs/
 [Uu]ser[Ss]ettings/

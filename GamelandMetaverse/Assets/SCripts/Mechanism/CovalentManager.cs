@@ -36,7 +36,7 @@ public class CovalentManager : MonoBehaviour
     public void GetNFTUserBalance()
     {
         //if(!loadingData) StartCoroutine(GetNFTBalance());
-        if(!loadingData) CoinExManager.Instance.GetNFTList();
+        if(!loadingData) TrustEVMManager.Instance.GetNFTList();
         else Debug.Log("Already loading GetNFTBalance");
     }
     async public void GetNFTBalance()
@@ -81,7 +81,7 @@ public class CovalentManager : MonoBehaviour
                         for (int i = 0; i < _data.GetField("data").GetField("items").list.Count; i++)
                         {
                             var _add = _data.GetField("data").GetField("items")[i].GetField("contract_address").stringValue.ToLower();
-                            if (CoinExManager.contract.ToLower().Equals(_add))
+                            if (TrustEVMManager.contract.ToLower().Equals(_add))
                             {
                                 if (!_data.GetField("data").GetField("items")[i].GetField("nft_data").isArray)
                                 {
@@ -132,7 +132,7 @@ public class CovalentManager : MonoBehaviour
     }
     IEnumerator GetNFTMetaData(string _tokenid)
     {
-        using (UnityWebRequest webRequest = UnityWebRequest.Get(GetMetaDataPreURL + CoinExManager.contract + GetMetaDataMidURL + _tokenid + GetMetaDataPostURL))
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(GetMetaDataPreURL + TrustEVMManager.contract + GetMetaDataMidURL + _tokenid + GetMetaDataPostURL))
         {
             webRequest.timeout = 30;
             // Request and wait for the desired page.
@@ -162,7 +162,7 @@ public class CovalentManager : MonoBehaviour
                         for (int i = 0; i < _data.GetField("data").GetField("items").list.Count; i++)
                         {
                             var _add = _data.GetField("data").GetField("items")[i].GetField("contract_address").stringValue.ToLower();
-                            if (CoinExManager.contract.ToLower().Equals(_add))
+                            if (TrustEVMManager.contract.ToLower().Equals(_add))
                             {
                                 if (_data.GetField("data").GetField("items")[i].GetField("nft_data").list.Count > 0)
                                 {

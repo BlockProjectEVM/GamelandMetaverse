@@ -32,12 +32,12 @@ public class InAppManager : MonoBehaviour
         insta = this;
         this.gameObject.SetActive(false);
 
-        CoinExManager.Instance.CheckUserBalance();
+        TrustEVMManager.Instance.CheckUserBalance();
     }
 
     private void OnEnable()
     {
-        CoinExManager.Instance.CheckUserBalance();
+        TrustEVMManager.Instance.CheckUserBalance();
     }
 
     public void SelectItem(int _no, Texture _texture)
@@ -54,12 +54,12 @@ public class InAppManager : MonoBehaviour
     }
 
     public void UpdateBalance() {
-        userBalance.text = "Balance : " + CoinExManager.userBalance;
+        userBalance.text = "Balance : " + TrustEVMManager.userBalance;
     }
 
     public void purchaseItem(int index)
     {
-        CoinExManager.Instance.CoinBuyOnSendContract(index);
+        TrustEVMManager.Instance.CoinBuyOnSendContract(index);
     }
 
     public void ClosePurchasePanel()

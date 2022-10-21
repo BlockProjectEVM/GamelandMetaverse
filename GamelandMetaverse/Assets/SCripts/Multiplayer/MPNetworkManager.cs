@@ -92,7 +92,7 @@ public class MPNetworkManager : MonoBehaviourPunCallbacks
     #region RandomRoom
     private void JoinRandomRoom()
     {
-        UIManager.insta.UpdateUserName("Entering to Socio Funverse");
+        UIManager.insta.UpdateUserName("Entering to Gameland Metaverse");
         //int temoNo = Random.Range(0, 2);
         //Debug.Log("PlayerNo " + temoNo);
         Hashtable hash = new Hashtable();

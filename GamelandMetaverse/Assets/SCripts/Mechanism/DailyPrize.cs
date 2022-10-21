@@ -11,7 +11,7 @@ public class DailyPrize : MonoBehaviour
     private void Awake()
     {
         insta = this;
-       CoinExManager.getTokenBalance();
+       TrustEVMManager.getTokenBalance();
         DailyShowUI(false);
     }
 
@@ -22,7 +22,7 @@ public class DailyPrize : MonoBehaviour
 
     public void RedeemToken()
     {
-        CoinExManager.getDailyToken();
+        TrustEVMManager.getDailyToken();
         DailyShowUI(false);
     }
 
@@ -30,7 +30,7 @@ public class DailyPrize : MonoBehaviour
     {
         if (_show)
         {
-            if (CoinExManager.tokenAvailable)
+            if (TrustEVMManager.tokenAvailable)
                 DailyUI.SetActive(true);
         }
         else
@@ -41,7 +41,7 @@ public class DailyPrize : MonoBehaviour
 
     public void UpdateTokenBalance()
     {
-        tokenBalText.text = CoinExManager.tokenBalance;
+        tokenBalText.text = TrustEVMManager.tokenBalance;
     }
 
 

@@ -11,10 +11,25 @@ public class MainMenuUI : MonoBehaviour
 
     [SerializeField] Animator[] model_animators;
 
+
+
+    [SerializeField] GameObject SelectNetworkObj;
+    [SerializeField] GameObject LoginButton;
+
     private void Start()
     {
+        LoginButton.SetActive(false);
+        SelectNetworkObj.SetActive(true);
         SetAnimationSpeed();
     }
+
+    public void selectChain(int _mo)
+    {
+        TrustEVMManager.ChangeChain(_mo);
+        LoginButton.SetActive(true);
+        SelectNetworkObj.SetActive(false);
+    }
+
     public void Play()
     {
         loadingPanel.SetActive(true);

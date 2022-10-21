@@ -13,6 +13,16 @@ mergeInto(LibraryManager.library, {
   SetConnectAccount: function (value) {
     window.web3gl.connectAccount = value;
   },
+  
+  SetChainNetwork: function (value) {
+    window.web3ChainId = value;
+  },
+  
+  OpenWebpage: function (url) {
+    url = Pointer_stringify(url);
+    console.log('Opening link: ' + url);
+    window.open(url,'_blank');
+  },
 
   SendContractJs: function (method, abi, contract, args, value, gasLimit, gasPrice) {
     window.web3gl.sendContract(

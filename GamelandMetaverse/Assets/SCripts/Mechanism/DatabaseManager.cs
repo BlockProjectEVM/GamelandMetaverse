@@ -153,7 +153,7 @@ public class DatabaseManager : MonoBehaviour
                         if (data.transactionsInformation[i].transactionStatus.Equals("pending"))
                         {
                             Debug.Log("Pending Test 1");
-                            CoinExManager.Instance.CheckDatabaseTransactionStatus(data.transactionsInformation[i].transactionId);                         
+                            TrustEVMManager.Instance.CheckDatabaseTransactionStatus(data.transactionsInformation[i].transactionId);                         
                         }
                     }
                 }
@@ -273,7 +273,7 @@ public class DatabaseManager : MonoBehaviour
     async public Task<long> GetCurrentTime()
     {
         
-        string result =await CoinExManager.Instance.CheckTimeStatus();
+        string result =await TrustEVMManager.Instance.CheckTimeStatus();
        
         long currentEpoch;
         if (!string.IsNullOrEmpty(result))
